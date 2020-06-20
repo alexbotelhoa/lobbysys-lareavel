@@ -37,7 +37,11 @@ class VisitorController extends Controller
      */
     public function store(Request $request)
     {
-        $visitor = Visitor::create($request->all());
+        try {
+            $visitor = Visitor::create($request->all());
+        } catch (\Exception $e) {
+            return response([ "message" => "Visitor Bad Request"], 400);
+        }
 
         return response($visitor, 201);
     }
@@ -81,7 +85,11 @@ class VisitorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $visitor = Visitor::where('id', $id)->update($request->except('_token', '_method'));
+        try {
+            $visitor = Visitor::where('id', $id)->update($request->except('_token', '_method'));
+        } catch (\Exception $e) {
+            return response([ "message" => "Visitor Bad Request"], 400);
+        }
 
         if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
 

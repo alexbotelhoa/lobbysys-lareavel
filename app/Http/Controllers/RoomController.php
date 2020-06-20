@@ -37,7 +37,11 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        $room = Room::create($request->all());
+        try {
+            $room = Room::create($request->all());
+        } catch (\Exception $e) {
+            return response([ "message" => "Room Bad Request"], 400);
+        }
 
         return response($room, 201);
     }
@@ -81,7 +85,11 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $room = Room::where('id', $id)->update($request->except('_token', '_method'));
+        try {
+            $room = Room::where('id', $id)->update($request->except('_token', '_method'));
+        } catch (\Exception $e) {
+            return response([ "message" => "Room Bad Request"], 400);
+        }
 
         if (!$room) return response([ "message" => "Room Not Found!" ], 404);
 
