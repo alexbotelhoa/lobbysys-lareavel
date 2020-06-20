@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Room::class, function (Faker $faker) {
     return [
-        'nrRoom' => $faker->randomNumber(),
+        'nrRoom' => $faker->unique()->numberBetween($min = 1000, $max = 9999),
     ];
 });
