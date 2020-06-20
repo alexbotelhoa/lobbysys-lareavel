@@ -85,13 +85,15 @@ class VisitorController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $visitor = Visitor::find($id);
+
+        if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
+
         try {
-            $visitor = Visitor::where('id', $id)->update($request->except('_token', '_method'));
+            $visitor->update($request->except('_token', '_method'));
         } catch (\Exception $e) {
             return response([ "message" => "Visitor Bad Request"], 400);
         }
-
-        if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
 
         return response($visitor, 202);
     }

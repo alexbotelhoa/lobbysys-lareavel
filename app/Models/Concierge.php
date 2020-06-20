@@ -9,6 +9,7 @@ class Concierge extends Model
     protected $fillable = [
         'visitor_id',
         'room_id',
+        'active',
     ];
 
     protected $guarded = [
@@ -21,11 +22,11 @@ class Concierge extends Model
 
     public function visitor()
     {
-        return $this->belongsTo('App\Model\Visitor');
+        return $this->hasOne('App\Models\Visitor', 'id', 'visitor_id');
     }
 
     public function room()
     {
-        return $this->belongsTo('App\Model\Room');
+        return $this->hasOne('App\Models\Room', 'id', 'room_id');
     }
 }

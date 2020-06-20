@@ -9,7 +9,6 @@ class Visitor extends Model
     protected $fillable = [
         'name',
         'cpf',
-        'room',
         'birth',
         'email',
     ];
@@ -21,4 +20,9 @@ class Visitor extends Model
     ];
 
     protected $table = 'visitors';
+
+    public function concierge()
+    {
+        return $this->hasOne('App\Models\Concierge', 'visitor_id', 'id');
+    }
 }

@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 /*
- * Rotas das páginas de Administração de "Visitantes - Visitors"
+ * Rotas das páginas de Administração de Visitantes - Tabela Visitors
  */
 Route::prefix('/visitors')->group(function () {
 
@@ -37,7 +37,7 @@ Route::prefix('/visitors')->group(function () {
 
 
 /*
- * Rotas das páginas de Administração de "Salas - Rooms"
+ * Rotas das páginas de Administração de Salas - Tabela Rooms
  */
 Route::prefix('/rooms')->group(function () {
 
@@ -51,7 +51,7 @@ Route::prefix('/rooms')->group(function () {
 
 
 /*
- * Rota da visualização dos registros de "Portaria - Concierge"
+ * Rota da visualização dos Registros da Portaria - Tabela Concierge
  */
 Route::get('/', 'ConciergeController@index');
 

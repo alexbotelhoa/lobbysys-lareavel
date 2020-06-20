@@ -16,9 +16,10 @@ class CreateConciergesTable extends Migration
         Schema::create('concierges', function (Blueprint $table) {
             $table->id();
             $table->integer('visitor_id')->unsigned();
-            $table->foreign('visitor_id')->references('id')->on('visitor');
+            $table->foreign('visitor_id')->references('id')->on('visitors');
             $table->integer('room_id')->unsigned();
-            $table->foreign('room_id')->references('id')->on('room');
+            $table->foreign('room_id')->references('id')->on('rooms');
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

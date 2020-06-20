@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Concierge;
 use Illuminate\Http\Request;
 
 class ConciergeController extends Controller
@@ -13,7 +14,9 @@ class ConciergeController extends Controller
      */
     public function index()
     {
-        //
+        $concierges = Concierge::all();
+
+        return response($concierges, 200);
     }
 
     /**
@@ -34,7 +37,13 @@ class ConciergeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $concierge = Concierge::create($request->all());
+        } catch (\Exception $e) {
+            return response([ "message" => "Concierge Bad Request"], 400);
+        }
+
+        return response($concierge, 201);
     }
 
     /**
@@ -68,7 +77,17 @@ class ConciergeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $concierge = Concierge::find($id);
+
+        if (!$concierge) return response([ "message" => "Concierge Not Found!" ], 404);
+
+        try {
+            $concierge->update($request->except('_token', '_method'));
+        } catch (\Exception $e) {
+            return response([ "message" => "Visitor Bad Request"], 400);
+        }
+
+        return response($concierge, 202);
     }
 
     /**
@@ -79,6 +98,10 @@ class ConciergeController extends Controller
      */
     public function destroy($id)
     {
-        //
+//        $concierge = Concierge::where('id', $id)->delete($id);
+//
+//        if (!$concierge) return response([ "message" => "Concierge Not Found!" ], 404);
+//
+//        return response('', 204);
     }
 }

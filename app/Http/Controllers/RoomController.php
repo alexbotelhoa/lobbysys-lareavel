@@ -85,13 +85,15 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $room = Room::find($id);
+
+        if (!$room) return response([ "message" => "Room Not Found!" ], 404);
+
         try {
-            $room = Room::where('id', $id)->update($request->except('_token', '_method'));
+            $room->update($request->except('_token', '_method'));
         } catch (\Exception $e) {
             return response([ "message" => "Room Bad Request"], 400);
         }
-
-        if (!$room) return response([ "message" => "Room Not Found!" ], 404);
 
         return response($room, 202);
     }

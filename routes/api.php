@@ -18,8 +18,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/*
+ * Rotas do Sistema Visitor V1
+ */
 
+// Criação de Visitantes
 Route::resource('visitors', 'VisitorController');
+
+// Criação de Salas ou Apartamentos
 Route::resource('rooms', 'RoomController');
-Route::resource('queues', 'QueueController');
+
+// Criação dos Registros de Portaria
 Route::resource('concierges', 'ConciergeController');
+
+// Criação da Fila de Espera
+Route::resource('queues', 'QueueController');
