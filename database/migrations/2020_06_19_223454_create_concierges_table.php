@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVisitorsTable extends Migration
+class CreateConciergesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateVisitorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('visitors', function (Blueprint $table) {
+        Schema::create('concierges', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->string('cpf', 14);
-            $table->date('birth')->nullable();
-            $table->string('email')->nullable();
+            $table->integer('visitor_id')->unsigned();
+            $table->foreign('visitor_id')->references('id')->on('visitor');
+            $table->integer('room_id')->unsigned();
+            $table->foreign('room_id')->references('id')->on('room');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateVisitorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visitors');
+        Schema::dropIfExists('concierges');
     }
 }

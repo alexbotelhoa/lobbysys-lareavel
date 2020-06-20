@@ -4,14 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Visitor extends Model
+class Room extends Model
 {
     protected $fillable = [
         'name',
-        'cpf',
-        'room',
-        'birth',
-        'email',
     ];
 
     protected $guarded = [
@@ -20,5 +16,5 @@ class Visitor extends Model
         'update_at'
     ];
 
-    protected $table = 'visitors';
+    protected $table = 'rooms';
 }

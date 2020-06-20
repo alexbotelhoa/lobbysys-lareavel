@@ -3,29 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Visitor;
+use App\Models\Room;
 
-class VisitorsController extends Controller
+class RoomController extends Controller
 {
-
-    private $visitor;
-
-    public function __construct()
-    {
-//        $this->middleware('auth');
-        $this->visitor = new Visitor();
-    }
-
     /**
      * Display a listing of the resource.
      *
-     * @return Visitor[]|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $visitors = Visitor::all();
+        $rooms = Room::all();
 
-        return response($visitors, 200);
+        return response($rooms, 200);
     }
 
     /**
@@ -35,7 +26,7 @@ class VisitorsController extends Controller
      */
     public function create()
     {
-        return response([ "message" => "Route Create!" ], 200);
+        return response([ "message" => "Route Create Room!" ], 200);
     }
 
     /**
@@ -46,9 +37,9 @@ class VisitorsController extends Controller
      */
     public function store(Request $request)
     {
-        $visitor = Visitor::create($request->all());
+        $room = Room::create($request->all());
 
-        return response($visitor, 201);
+        return response($room, 201);
     }
 
     /**
@@ -59,11 +50,11 @@ class VisitorsController extends Controller
      */
     public function show($id)
     {
-        $visitor = Visitor::find($id);
+        $room = Room::find($id);
 
-        if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
+        if (!$room) return response([ "message" => "Room Not Found!" ], 404);
 
-        return response($visitor, 302);
+        return response($room, 302);
     }
 
     /**
@@ -74,11 +65,11 @@ class VisitorsController extends Controller
      */
     public function edit($id)
     {
-        $visitor = Visitor::find($id);
+        $room = Room::find($id);
 
-        if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
+        if (!$room) return response([ "message" => "Room Not Found!" ], 404);
 
-        return response([ "message" => "Route Edit!" ], 200);
+        return response([ "message" => "Route Edit Room!" ], 200);
     }
 
     /**
@@ -90,13 +81,11 @@ class VisitorsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $visitor = Visitor::find($id);
+        $room = Room::where('id', $id)->update($request->except('_token', '_method'));
 
-        if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
+        if (!$room) return response([ "message" => "Room Not Found!" ], 404);
 
-        $visitor->update($request->except('_token', '_method'));
-
-        return response($visitor, 202);
+        return response($room, 202);
     }
 
     /**
@@ -107,9 +96,9 @@ class VisitorsController extends Controller
      */
     public function destroy($id)
     {
-        $visitor = Visitor::where('id', $id)->delete($id);
+        $room = Room::where('id', $id)->delete($id);
 
-        if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
+        if (!$room) return response([ "message" => "Room Not Found!" ], 404);
 
         return response('', 204);
     }

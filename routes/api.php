@@ -19,4 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('/visitors', 'VisitorsController');
+Route::resource('visitors', 'VisitorController');
+Route::resource('rooms', 'RoomController');
+Route::resource('queues', 'QueueController');
+Route::resource('concierges', 'ConciergeController');
