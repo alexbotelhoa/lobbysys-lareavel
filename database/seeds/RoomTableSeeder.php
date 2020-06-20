@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class VisitorSeeder extends Seeder
+class RoomTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class VisitorSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Visitor::class, 40)->create();
+        factory(App\Models\Room::class, 20)->create();
     }
 }

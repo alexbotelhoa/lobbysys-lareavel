@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            VisitorSeeder::class,
-            RoomSeeder::class,
+            VisitorTableSeeder::class,
+            RoomTableSeeder::class,
         ]);
     }
 }
