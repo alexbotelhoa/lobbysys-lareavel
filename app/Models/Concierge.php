@@ -9,24 +9,15 @@ class Concierge extends Model
     protected $fillable = [
         'visitor_id',
         'room_id',
-        'active',
+        'checkIn',
     ];
 
     protected $guarded = [
         'id',
+        'checkOut',
         'created_at',
-        'update_at'
+        'update_at',
     ];
 
     protected $table = 'concierges';
-
-    public function visitor()
-    {
-        return $this->hasOne('App\Models\Visitor', 'id', 'visitor_id');
-    }
-
-    public function room()
-    {
-        return $this->hasOne('App\Models\Room', 'id', 'room_id');
-    }
 }

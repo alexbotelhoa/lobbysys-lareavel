@@ -17,9 +17,4 @@ class Room extends Model
     ];
 
     protected $table = 'rooms';
-
-    public function concierge()
-    {
-        return $this->hasOne('App\Models\Concierge', 'room_id', 'id');
-    }
 }

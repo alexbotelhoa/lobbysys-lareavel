@@ -15,6 +15,10 @@ class CreateQueuesTable extends Migration
     {
         Schema::create('queues', function (Blueprint $table) {
             $table->id();
+            $table->integer('visitor_id')->unsigned();
+            $table->foreign('visitor_id')->references('id')->on('visitors');
+            $table->integer('room_id')->unsigned();
+            $table->foreign('room_id')->references('id')->on('rooms');
             $table->timestamps();
         });
     }

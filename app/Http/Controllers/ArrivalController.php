@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Queue;
+use App\Models\Arrival;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class QueueController extends Controller
+class ArrivalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +15,13 @@ class QueueController extends Controller
      */
     public function index()
     {
-        $queue = DB::table('queues')
-            ->join('visitors', 'queues.visitor_id', '=', 'visitors.id')
-            ->join('rooms', 'queues.room_id', '=', 'rooms.id')
-            ->select('queues.*', 'visitors.name', 'visitors.cpf', 'rooms.nrRoom')
+        $arrivals = DB::table('arrivals')
+            ->join('visitors', 'arrivals.visitor_id', '=', 'visitors.id')
+            ->join('rooms', 'arrivals.room_id', '=', 'rooms.id')
+            ->select('arrivals.*', 'visitors.name', 'visitors.cpf', 'rooms.nrRoom')
             ->get();
 
-        return response($queue, 200);
+        return response($arrivals, 200);
     }
 
     /**
@@ -33,12 +33,12 @@ class QueueController extends Controller
     public function store(Request $request)
     {
         try {
-            $queuePosition = Queue::create($request->all());
+            $arrival = Arrival::create($request->all());
         } catch (\Exception $e) {
-            return response([ "message" => "Queue Position Bad Request"], 400);
+            return response([ "message" => "Arrival Bad Request"], 400);
         }
 
-        return response($queuePosition, 201);
+        return response($arrival, 201);
     }
 
     /**
@@ -49,9 +49,9 @@ class QueueController extends Controller
      */
     public function destroy($id)
     {
-        $queuePosition = Queue::where('id', $id)->delete($id);
+        $arrival = Arrival::where('id', $id)->delete($id);
 
-        if (!$queuePosition) return response([ "message" => "Queue Position Not Found!" ], 404);
+        if (!$arrival) return response([ "message" => "Arrival Not Found!" ], 404);
 
         return response('', 204);
     }

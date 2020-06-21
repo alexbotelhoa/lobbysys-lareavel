@@ -4,20 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Visitor extends Model
+class Arrival extends Model
 {
     protected $fillable = [
-        'name',
-        'cpf',
-        'birth',
-        'email',
+        'visitor_id',
+        'room_id',
     ];
 
     protected $guarded = [
         'id',
+        'checkIn',
         'created_at',
-        'update_at'
+        'update_at',
     ];
 
-    protected $table = 'visitors';
+    protected $table = 'arrivals';
 }
