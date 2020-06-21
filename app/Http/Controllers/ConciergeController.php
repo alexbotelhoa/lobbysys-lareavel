@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Concierge;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ConciergeController extends Controller
 {
@@ -14,25 +15,19 @@ class ConciergeController extends Controller
      */
     public function index()
     {
-        $concierges = Concierge::all();
+        $concierges = DB::table('concierges')
+            ->join('visitors', 'concierges.visitor_id', '=', 'visitors.id')
+            ->join('rooms', 'concierges.room_id', '=', 'rooms.id')
+            ->select('concierges.*', 'visitors.name', 'visitors.cpf', 'rooms.nrRoom')
+            ->get();
 
         return response($concierges, 200);
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -40,7 +35,7 @@ class ConciergeController extends Controller
         try {
             $concierge = Concierge::create($request->all());
         } catch (\Exception $e) {
-            return response([ "message" => "Concierge Bad Request"], 400);
+            return response(["message" => "Concierge Bad Request"], 400);
         }
 
         return response($concierge, 201);
@@ -54,54 +49,18 @@ class ConciergeController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+//        $concierge = Concierge::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        $concierge = DB::table('concierges')
+            ->join('visitors', 'concierges.visitor_id', '=', 'visitors.id')
+            ->join('rooms', 'concierges.room_id', '=', 'rooms.id')
+            ->where('concierges.id', '=', $id)
+            ->select('concierges.*', 'visitors.name', 'visitors.cpf', 'rooms.nrRoom')
+            ->get();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $concierge = Concierge::find($id);
 
         if (!$concierge) return response([ "message" => "Concierge Not Found!" ], 404);
 
-        try {
-            $concierge->update($request->except('_token', '_method'));
-        } catch (\Exception $e) {
-            return response([ "message" => "Visitor Bad Request"], 400);
-        }
-
-        return response($concierge, 202);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-//        $concierge = Concierge::where('id', $id)->delete($id);
-//
-//        if (!$concierge) return response([ "message" => "Concierge Not Found!" ], 404);
-//
-//        return response('', 204);
+        return response($concierge, 302);
     }
 }
