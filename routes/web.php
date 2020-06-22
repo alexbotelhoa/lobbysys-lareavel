@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')
+    ->name('dashboard');
 
 
 /*
@@ -27,11 +29,14 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::prefix('/visitors')->group(function () {
 
-    Route::get('/', 'VisitorController@index');
+    Route::get('/', 'VisitorController@index')
+        ->name('visitors.index');
 
-    Route::get('/new', 'VisitorController@create');
+    Route::get('/new', 'VisitorController@create')
+        ->name('visitors.create');
 
-    Route::get('/{id}/edit', 'VisitorController@edit');
+    Route::get('/{id}/edit', 'VisitorController@edit')
+        ->name('visitors.edit');
 
 });
 
@@ -41,11 +46,14 @@ Route::prefix('/visitors')->group(function () {
  */
 Route::prefix('/rooms')->group(function () {
 
-    Route::get('/', 'RoomController@index');
+    Route::get('/', 'RoomController@index')
+        ->name('rooms.index');
 
-    Route::get('/new', 'RoomController@create');
+    Route::get('/new', 'RoomController@create')
+        ->name('rooms.create');
 
-    Route::get('/{id}/edit', 'RoomController@edit');
+    Route::get('/{id}/edit', 'RoomController@edit')
+        ->name('rooms.edit');
 
 });
 
@@ -53,9 +61,5 @@ Route::prefix('/rooms')->group(function () {
 /*
  * Rota da visualização dos Registros da Portaria - Tabela Concierge
  */
-Route::get('/', 'ConciergeController@index');
-
-
-
-
-
+Route::get('/concierges', 'ConciergeController@index')
+    ->name('concierges.index');

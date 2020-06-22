@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>LobbySis</title>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
             html, body {
-                background-color: #f3f3f3;
-                color: #636b6f;
-                font-family: 'Roboto', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
+                padding: 20px;
+            }
+            .navbar {
+                margin-bottom: 20px;
             }
 
             .full-height {
-                height: 100vh;
+                height: 80vh;
             }
 
             .flex-center {
@@ -62,24 +61,25 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        <title>{{ config('app.name', 'LobbySis') }}</title>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    LobbySis
-                </div>
-            </div>
+        <div class="container">
+            @component('components.navbar', ["current" => $current])
+            @endcomponent
+            <main role="main">
+                @hasSection('body')
+                    @yield('body')
+                @endif
+            </main>
         </div>
+
+        <script src="{{ asset('js/app.js') }}"></script>
+
+        @hasSection('javascript')
+            @yield('javascript')
+        @endif
+
     </body>
 </html>
