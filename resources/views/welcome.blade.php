@@ -77,9 +77,17 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    LobbySis
+                    <div id="example"></div>
                 </div>
             </div>
         </div>
+
+        <script type="text/javascript" src="js/app.js"></script>
+        <script id="__bs_script__">
+            //<![CDATA[
+            document.write("<script async src='http://192.168.1.101:8000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>");
+            //]]>
+        </script>
+
     </body>
 </html>

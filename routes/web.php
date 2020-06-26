@@ -63,3 +63,11 @@ Route::prefix('/rooms')->group(function () {
  */
 Route::get('/concierges', 'ConciergeController@index')
     ->name('concierges.index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
