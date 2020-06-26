@@ -9,9 +9,6 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.jss') }}" defer></script>
-
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -35,7 +32,7 @@
             body {
                 font-family: 'Roboto', Arial, Helvetica, sans-serif;
                 height: 100vh;
-                background: #000 url('assets/background.jpg') no-repeat;
+                background: #000 url({{ asset('images/background.jpg') }}) no-repeat;
                 background-size: cover;
                 -webkit-font-smoothing: antialiased !important;
             }
@@ -60,7 +57,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="assets/logo.png" title="LobbySys">
+                        <img src="{{ asset('images/logo.png') }}" title="LobbySys">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -75,13 +72,8 @@
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ url('/') }}">{{ __('Welcome') }}</a>
                                 </li>
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </li>
-                                @endif
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

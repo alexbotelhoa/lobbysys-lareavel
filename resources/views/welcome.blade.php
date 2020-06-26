@@ -28,7 +28,7 @@
             body {
                 font-family: 'Roboto', Arial, Helvetica, sans-serif;
                 height: 100vh;
-                background: #000 url('assets/background.jpg') no-repeat;
+                background: #000 url({{ asset('images/background.jpg') }}) no-repeat;
                 background-size: cover;
                 -webkit-font-smoothing: antialiased !important;
             }
@@ -53,7 +53,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="assets/logo.png" title="">
+                        <img src="{{ asset('images/logo.png') }}" title="">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -68,7 +68,7 @@
 
                             <!-- Authentication Links -->
                             <div class="top-right links">
-                                <a href="{{ route('dashboard') }}"><img src="assets/login.png" title="Dashboard"></a>
+                                <a href="{{ route('dashboard') }}"><img src="{{ asset('images/login.png') }}" title="Dashboard"></a>
                             </div>
                             {{--@endif--}}
                         </ul>

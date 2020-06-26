@@ -12,4 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.react('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .js('node_modules/popper.js/dist/popper.js', 'public/js')
+    .js('node_modules/react-router-dom/cjs/react-router-dom.js', 'public/js')
+    .sourceMaps();

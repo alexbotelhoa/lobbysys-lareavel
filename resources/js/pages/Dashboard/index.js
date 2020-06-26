@@ -6,7 +6,7 @@ import { BsBoxArrowRight } from 'react-icons/bs';
 import './styles.css';
 import api from '../../services/api';
 import Header from '../../components/Header';
-import person from '../../assets/person.png'
+import person from '../../assets/person.gif'
 
 export default function Dashboard() {
 	const [mensage, setMensage] = useState(null);
@@ -205,7 +205,7 @@ export default function Dashboard() {
 
 				<div className="contentRight">
 					<div className="contentDashboardQueues">
-						<p>Fila de Esperaa</p>
+						<p>Fila de Espera</p>
 					</div>
 					<div className="queuePerson">
 						<ul>

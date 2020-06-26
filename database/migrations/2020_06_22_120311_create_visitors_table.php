@@ -15,7 +15,7 @@ class CreateVisitorsTable extends Migration
     {
         Schema::create('visitors', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
+            $table->string('name', 20);
             $table->string('cpf', 14)->unique();
             $table->date('birth')->nullable();
             $table->string('email')->nullable();
