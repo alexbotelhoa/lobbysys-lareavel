@@ -11,6 +11,6 @@ class VisitorTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Visitor::class, 40)->create();
+        factory(App\Models\Visitor::class, 60)->create();
     }
 }

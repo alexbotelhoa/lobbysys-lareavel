@@ -1,0 +1,147 @@
+.contentConcierge {
+    margin-bottom: 20px;
+}
+
+.contentConcierge form {
+    text-align: center;
+}
+
+.contentConcierge form .field-group {
+    display: flex;
+}
+
+.contentConcierge form .field {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.contentConcierge form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #F0F0F5;
+    color: #6C6C80;
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 45px;
+    width: 330px;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+.contentConcierge form .field label {
+    display: flex;
+    font-size: 14px;
+    margin-left: 85px;
+    color: #7e7e07;
+    font-weight: bold;
+}
+
+.contentConcierge form .field input[type=text],
+.contentConcierge form .field input[type=date] {
+    width: 330px;
+    height: 45px;
+    background: #F0F0F5;
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-size: 14px;
+    color: #6C6C80;
+    border-radius: 5px;
+}
+
+.btnsConcierge {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;   
+}
+
+.contentConcierge form .field-group .btnsConcierge span {
+    border-radius: 5px 0 0 5px;
+    background-color: lightgrey;
+    color: #7e7e07;
+    width: 50px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentConcierge form .field-group .btnsConcierge button {
+    border: 0;
+    border-radius: 5px;
+    width: 100px;
+    height: 45px;
+    background: rgb(230, 228, 228);
+    color: #7e7e07;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    margin-right: 10px;
+    transition: border-color 0.2s;
+}
+
+.contentConcierge form .field-group .btnsConcierge button:hover {
+    background: lightgrey;
+}
+  
+.contentConcierge form .field-group .btnsConcierge button strong {
+    flex: 1;
+    text-align: center;
+    align-self: center;
+    font-size: 14px;
+}
+
+.contentConcierges {
+    height: 61.4vh;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    border-radius: 10px 0 0 10px;  
+}
+
+.contentConcierges ul {
+    font-size: 14px;
+}
+
+.contentConcierges ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: center;
+}
+
+.contentConcierges ul .titleFilteredConcierges {
+    background: #F0F0F5;  
+}
+
+.contentConcierges ul .titleFilteredConcierges div {
+    font-weight: bold;
+    color: #7e7e07;    
+}
+
+.contentConcierges ul .contentFilteredConcierges {
+    color: #6C6C80;
+}
+
+.contentConcierges ul li h3 {
+    width: 30px;
+}
+
+.contentConcierges ul li header {
+    width: 250px;
+}
+
+.contentConcierges ul li span {
+    width: 120px;
+}
+
+.contentConcierges ul li h4 {
+    width: 60px;
+    font-weight: normal;
+}
+
+.contentConcierges ul li p {
+    width: 200px;
+    text-align: center;
+}

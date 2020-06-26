@@ -1,3 +1,10 @@
+*/uploads/*
+backups/
+docs/
+*.code-workspace
+*.keystore
+*.psd
+*.sqlite
 /node_modules
 /public/hot
 /public/storage

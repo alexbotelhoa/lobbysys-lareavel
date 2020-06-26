@@ -10,11 +10,11 @@ class Concierge extends Model
         'visitor_id',
         'room_id',
         'checkIn',
+        'checkOut',
     ];
 
     protected $guarded = [
         'id',
-        'checkOut',
         'created_at',
         'update_at',
     ];

@@ -15,8 +15,10 @@ class UserTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => ('admin'),
-            'email' => ('admin@visitor.com'),
+            'email' => ('admin@lobbysys.com'),
             'password' => Hash::make('12345678'),
         ]);
+
+        factory(App\User::class, 20)->create();
     }
 }

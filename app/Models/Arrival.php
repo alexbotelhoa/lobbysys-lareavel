@@ -9,11 +9,11 @@ class Arrival extends Model
     protected $fillable = [
         'visitor_id',
         'room_id',
+        'checkIn',
     ];
 
     protected $guarded = [
         'id',
-        'checkIn',
         'created_at',
         'update_at',
     ];

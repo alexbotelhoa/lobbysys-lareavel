@@ -14,19 +14,9 @@ class VisitorController extends Controller
      */
     public function index()
     {
-        $visitors = Visitor::all();
+        $visitors = Visitor::orderBy('name')->get();
 
         return response($visitors, 200);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return response([ "message" => "Route Create Visitor!" ], 200);
     }
 
     /**
@@ -37,6 +27,10 @@ class VisitorController extends Controller
      */
     public function store(Request $request)
     {
+        $countVisitor = Visitor::where('cpf', $request->cpf)->count();
+
+        if ($countVisitor > 0) return response([ "message" => "Visitor already registered"], 226);
+
         try {
             $visitor = Visitor::create($request->all());
         } catch (\Exception $e) {
@@ -44,58 +38,6 @@ class VisitorController extends Controller
         }
 
         return response($visitor, 201);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $visitor = Visitor::find($id);
-
-        if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
-
-        return response($visitor, 302);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $visitor = Visitor::find($id);
-
-        if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
-
-        return response([ "message" => "Route Edit Visitor!" ], 200);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $visitor = Visitor::find($id);
-
-        if (!$visitor) return response([ "message" => "Visitor Not Found!" ], 404);
-
-        try {
-            $visitor->update($request->except('_token', '_method'));
-        } catch (\Exception $e) {
-            return response([ "message" => "Visitor Bad Request"], 400);
-        }
-
-        return response($visitor, 202);
     }
 
     /**

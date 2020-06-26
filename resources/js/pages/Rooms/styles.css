@@ -1,0 +1,130 @@
+.contentRoom {
+    margin-bottom: 20px;
+}
+
+.contentRoom form {
+    text-align: center;
+}
+
+.contentRoom form .field-group {
+    display: flex;
+}
+
+.contentRoom form .field {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.contentRoom form .field label {
+    display: flex;
+    font-size: 14px;
+    margin-left: 85px;
+    color: #7e7e07;
+    font-weight: bold;
+}
+
+.contentRoom form .field input {
+    width: 330px;
+    height: 20px;
+    background: #F0F0F5;
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-size: 14px;
+    color: #6C6C80;
+    border-radius: 5px;
+}
+
+.contentRoom form .field-group .btnSalveRoom {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    margin-top: 15px;   
+}
+
+.contentRoom form .field-group .btnSalveRoom span {
+    border-radius: 5px 0 0 5px;
+    background-color: lightgrey;
+    color: #7e7e07;
+    width: 50px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentRoom form .field-group .btnSalveRoom button {
+    border: 0;
+    border-radius: 5px;
+    width: 300px;
+    height: 45px;
+    background: rgb(230, 228, 228);
+    color: #7e7e07;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: border-color 0.2s;
+}
+
+.contentRoom form .field-group .btnSalveRoom button:hover {
+    background: lightgrey;
+}
+  
+.contentRoom form .field-group .btnSalveRoom button strong {
+    flex: 1;
+    text-align: center;
+    align-self: center;
+    font-size: 14px;
+}
+
+.contentRooms {
+    height: 67.6vh;
+    overflow-y: scroll;
+    border-radius: 10px 0 0 10px;    
+}
+
+.contentRooms ul {
+    font-size: 14px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.contentRooms ul li {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    color: #6C6C80;
+    background: #F0F0F5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.contentRooms ul li header {
+    width: 80px;
+}
+.contentRooms ul li span {
+    width: 250px;
+}
+.contentRooms ul li p {
+    width: 120px;
+    text-align: center;
+}
+.contentRooms ul li footer {
+    width: 100px;
+    text-align: center;
+}
+
+.contentRooms ul li button {
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #7e7e07;
+    background: rgb(230, 228, 228);
+}
+
+.contentRooms ul li button:hover {
+    background: lightgrey;
+}

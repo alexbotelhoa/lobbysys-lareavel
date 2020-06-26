@@ -1,0 +1,150 @@
+.container{
+    height: 100%;
+    margin: 19px auto 20px;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.contentMain {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f3f3f3;
+}
+
+.contentVisitor {
+    margin-bottom: 20px;
+}
+
+.contentVisitor form {
+    text-align: center;
+}
+
+.contentVisitor form .field-group {
+    display: flex;
+}
+
+.contentVisitor form .field {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.contentVisitor form .field label {
+    display: flex;
+    font-size: 14px;
+    margin-left: 85px;
+    color: #7e7e07;
+    font-weight: bold;
+}
+
+.contentVisitor form .field input {
+    width: 330px;
+    height: 45px;
+    background: #F0F0F5;
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-size: 14px;
+    color: #6C6C80;
+    border-radius: 5px;
+}
+
+.contentVisitor form .btnSalveVisitor {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px;   
+}
+
+.contentVisitor form .btnSalveVisitor span {
+    border-radius: 5px 0 0 5px;
+    background-color: lightgrey;
+    color: #7e7e07;
+    width: 50px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentVisitor form .btnSalveVisitor button {
+    border: 0;
+    border-radius: 5px;
+    width: 300px;
+    height: 45px;
+    background: rgb(230, 228, 228);
+    color: #7e7e07;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: border-color 0.2s;
+}
+
+.contentVisitor form .btnSalveVisitor button:hover {
+    background: lightgrey;
+}
+  
+.contentVisitor form .btnSalveVisitor button strong {
+    flex: 1;
+    text-align: center;
+    align-self: center;
+    font-size: 14px;
+}
+
+.contentVisitors {
+    height: 53.8vh;
+    overflow-y: scroll;
+    color: #6C6C80;
+    border: 1px solid #ddd;
+    border-radius: 10px 0 0 10px;
+}
+
+.contentVisitors ul {
+    font-size: 14px;
+    background: #F0F0F5;
+}
+
+.contentVisitors ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.contentVisitors ul li h3 {
+    width: 30px;
+    text-align: center;
+}
+
+.contentVisitors ul li header {
+    width: 300px;
+}
+
+.contentVisitors ul li p {
+    width: 120px;
+    text-align: center;
+}
+
+.contentVisitors ul li footer {
+    width: 250px;
+}
+
+.contentVisitors ul li span {
+    width: 100px;
+    text-align: center;
+}
+
+.contentVisitors ul li button {
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #7e7e07;
+    background: rgb(230, 228, 228);
+}
+
+.contentVisitors ul li button:hover {
+    background: lightgrey;
+}

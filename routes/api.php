@@ -14,32 +14,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/*
+ * Rotas do Sistema de Controle de Portaria - LobbySys v1.0
+ */
+
+// Routas de Controle de Acesso ao Sistema
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Route::get('logout','AuthController@logout');
 
-/*
- * Rotas do Sistema Visitor V1
- */
-
-// Criação de Visitantes
+// Routas de Visitantes
 Route::resource('visitors', 'VisitorController');
 
-// Criação de Salas ou Apartamentos
+// Routas de Salas ou Apartamentos
 Route::resource('rooms', 'RoomController');
 
-// Criação da Fila de Espera
-Route::get('/queue', 'QueueController@index');
-Route::post('/queue', 'QueueController@store');
-Route::delete('/queue/{id}', 'QueueController@destroy');
+// Routas da Fila de Espera
+Route::get('/queues', 'QueueController@index');
+Route::post('/queues', 'QueueController@store');
+Route::delete('/queues/{id}', 'QueueController@destroy');
 
-// Criação dos Registros de Entrada de Visitantes
+// Routas dos Registros de Entrada de Visitantes
 Route::get('/arrivals', 'ArrivalController@index');
 Route::post('/arrivals', 'ArrivalController@store');
 Route::delete('/arrivals/{id}', 'ArrivalController@destroy');
 
-// Criação do Histórico dos Registros de Portaria
-Route::get('/concierges', 'ConciergeController@index');
+// Routas do Histórico dos Registros de Portaria
 Route::post('/concierges', 'ConciergeController@store');
-Route::get('/concierges/{id}', 'ConciergeController@show');
+Route::get('/concierges', 'ConciergeController@filter');

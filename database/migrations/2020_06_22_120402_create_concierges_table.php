@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArrivalsTable extends Migration
+class CreateConciergesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +14,14 @@ class CreateArrivalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('arrivals', function (Blueprint $table) {
+        Schema::create('concierges', function (Blueprint $table) {
             $table->id();
             $table->integer('visitor_id')->unsigned();
             $table->foreign('visitor_id')->references('id')->on('visitors');
             $table->integer('room_id')->unsigned();
             $table->foreign('room_id')->references('id')->on('rooms');
-            $table->date('checkIn')->default(Carbon::now());
-            $table->timestamps();
+            $table->timestamp('checkIn');
+            $table->timestamp('checkOut');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateArrivalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('arrivals');
+        Schema::dropIfExists('concierges');
     }
 }

@@ -9,22 +9,6 @@ use Illuminate\Support\Facades\DB;
 class ConciergeController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $concierges = DB::table('concierges')
-            ->join('visitors', 'concierges.visitor_id', '=', 'visitors.id')
-            ->join('rooms', 'concierges.room_id', '=', 'rooms.id')
-            ->select('concierges.*', 'visitors.name', 'visitors.cpf', 'rooms.nrRoom')
-            ->get();
-
-        return response($concierges, 200);
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -42,25 +26,28 @@ class ConciergeController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Store a newly created resource in storage.
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function filter(Request $request)
     {
-//        $concierge = Concierge::find($id);
-
-        $concierge = DB::table('concierges')
-            ->join('visitors', 'concierges.visitor_id', '=', 'visitors.id')
-            ->join('rooms', 'concierges.room_id', '=', 'rooms.id')
-            ->where('concierges.id', '=', $id)
-            ->select('concierges.*', 'visitors.name', 'visitors.cpf', 'rooms.nrRoom')
-            ->get();
-
+        try {
+            $concierge = DB::table('concierges')
+                ->join('visitors', 'concierges.visitor_id', '=', 'visitors.id')
+                ->join('rooms', 'concierges.room_id', '=', 'rooms.id')
+                ->where('concierges.visitor_id', 'LIKE', '%' . $request->visitor . '%')
+                ->where('concierges.room_id', 'LIKE', '%' . $request->room . '%')
+                ->where('concierges.checkIn', 'LIKE', '%' . $request->date . '%')
+                ->select('concierges.*', 'visitors.name', 'visitors.cpf', 'rooms.nrRoom')
+                ->get();
+        } catch (\Exception $e) {
+            return response(["message" => "Concierge Bad Request"], 400);
+        }
 
         if (!$concierge) return response([ "message" => "Concierge Not Found!" ], 404);
 
-        return response($concierge, 302);
+        return response($concierge, 200);        
     }
 }
