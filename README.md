@@ -1,10 +1,19 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/44276302/85882827-5bc83600-b7b6-11ea-92b1-a6f37e3c2e76.jpg"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/alexbotelhoa/lobbysys-laravel-react?color=ff0000"> 
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/alexbotelhoa/lobbysys-laravel-react?color=%23F7DF1E">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/alexbotelhoa/lobbysys-laravel-react">
+  
+  <a href="https://github.com/alexbotelhoa/lobbysys-laravel-react/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alexbotelhoa/lobbysys-laravel-react">
+  </a>
+
+  <a href="https://github.com/alexbotelhoa/lobbysys-laravel-react/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/alexbotelhoa/lobbysys-laravel-react">
+  </a>
+
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
 ## About Laravel
