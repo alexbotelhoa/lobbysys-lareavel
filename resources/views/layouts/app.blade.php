@@ -65,34 +65,37 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto"></ul>
+                        <ul class="navbar-nav mr-auto">
+
+                        </ul>
 
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
-                            @guest
+                                <div class="top-right links">
+                                    <a href="{{ url('/') }}">{{ __('Home') }}</a>
+                                </div>
+                                {{--<li class="nav-item">--}}
+                                    {{--<a class="nav-link" href="{{ url('/') }}">{{ __('Welcome') }}</a>--}}
+                                {{--</li>--}}
+                            @auth
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/') }}">{{ __('Welcome') }}</a>
+                                    <p class="nav-link">Bem vindo(a) {{ Auth::user()->name }}</p>
                                 </li>
-                            @else
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
                                     </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
                                 </li>
-                            @endguest
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            @endauth
                         </ul>
                     </div>
                 </div>

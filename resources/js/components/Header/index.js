@@ -10,18 +10,35 @@ import logo from '../../assets/logo.png';
 export default function Header() {
   const history = useHistory();
 
+
+    function getCookie(cname) {
+        const name = cname + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+
   function handleLogout() {
+    const cookie = getCookie('XSRF-TOKEN');
 
-    const cookies = document.cookie;
+    const data = new FormData();
+    data.append('_token', cookie);
 
-    console.log(cookies);
+    console.log(cookie);
 
-      api.post('logout', cookies);
+    api.post('logout', data);
 
-
-
-    // localStorage.clear();
-    // history.push('/');
+    history.push('/');
   }
 
   return (
@@ -30,7 +47,6 @@ export default function Header() {
         <span>
           <img src={logo} alt="LobbySys"/>
         </span>
-
 
         <div className="btnNavegacao">
           <Link className="button" to="/dashboard">
@@ -49,7 +65,6 @@ export default function Header() {
             <button className="btn">Portaria</button>
           </Link>
         </div>
-
 
         <span>
           <a href="https://www.linkedin.com/in/alex-botelho-almeida/">

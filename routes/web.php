@@ -21,3 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Route::get('/users', 'DashboardController@index')->name('users');
+
+Route::get('/visitors', 'DashboardController@index')->name('visitors');
+
+Route::get('/rooms', 'DashboardController@index')->name('rooms');
+
+Route::get('/concierges', 'DashboardController@index')->name('concierges');

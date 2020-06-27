@@ -14,11 +14,11 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => ('admin'),
+            'name' => ('Admin'),
             'email' => ('admin@lobbysys.com'),
             'password' => Hash::make('12345678'),
         ]);
 
-        factory(App\User::class, 20)->create();
+        factory(App\User::class, 30)->create();
     }
 }

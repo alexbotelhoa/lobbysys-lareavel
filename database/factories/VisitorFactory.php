@@ -10,7 +10,7 @@ $factory->define(Visitor::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'cpf' => Str::random(14),
-        'email' => Str::random(10).'@visitor.com',
+        'email' => $faker->unique()->safeEmail,
         'birth' => $faker->date(),
     ];
 });

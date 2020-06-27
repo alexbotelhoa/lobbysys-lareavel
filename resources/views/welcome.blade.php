@@ -21,14 +21,14 @@
                 box-sizing: border-box;
             }
 
-            html, body, #root {
+            html, body, #app {
                 min-height: 100%;
             }
 
             body {
                 font-family: 'Roboto', Arial, Helvetica, sans-serif;
                 height: 100vh;
-                background: #000 url({{ asset('images/background.jpg') }}) no-repeat;
+                background: #ffffff url({{ asset('images/background.jpg') }}) no-repeat;
                 background-size: cover;
                 -webkit-font-smoothing: antialiased !important;
             }
@@ -68,7 +68,7 @@
 
                             <!-- Authentication Links -->
                             <div class="top-right links">
-                                <a href="{{ route('dashboard') }}"><img src="{{ asset('images/login.png') }}" title="Dashboard"></a>
+                                <a href="{{ route('dashboard') }}">{{ __('Login') }}</a>
                             </div>
                             {{--@endif--}}
                         </ul>

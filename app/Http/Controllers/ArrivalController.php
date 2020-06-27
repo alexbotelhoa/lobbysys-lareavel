@@ -55,21 +55,6 @@ class ArrivalController extends Controller
         return response($arrival, 201);
     }
 
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function show($id)
-    // {
-    //     $arrival = Arrival::where('room_id', $id)->count();
-
-    //     if (!$arrival) return response([ "message" => "Arrival Not Found!" ], 404);
-
-    //     return response($arrival, 302);
-    // }
-
     /**
      * Remove the specified resource from storage.
      *
