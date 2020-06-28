@@ -1,88 +1,75 @@
-<p align="center"><img src="https://user-images.githubusercontent.com/44276302/85882827-5bc83600-b7b6-11ea-92b1-a6f37e3c2e76.jpg"></p>
+<h1 align="center">
+  <img src="https://user-images.githubusercontent.com/44276302/85958443-ef8f3300-b96b-11ea-8352-9e55b9e82b67.png">
+</h1>
+
+<h4 align="center">
+  🚀 LobbySys v1.0
+</h4>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/alexbotelhoa/lobbysys-laravel-react?color=ff0000"> 
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/alexbotelhoa/lobbysys-laravel-react?color=%23F7DF1E">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/alexbotelhoa/lobbysys-laravel-react">
-  
-  <a href="https://github.com/alexbotelhoa/lobbysys-laravel-react/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alexbotelhoa/lobbysys-laravel-react">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/alexbotelhoa/lobbysys-lareavel?color=ff0000"> 
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/alexbotelhoa/lobbysys-lareavel?color=%23F7DF1E">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/alexbotelhoa/lobbysys-lareavel">
+  <a href="https://github.com/alexbotelhoa/lobbysys-lareavel/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alexbotelhoa/lobbysys-lareavel">
   </a>
-
-  <a href="https://github.com/alexbotelhoa/lobbysys-laravel-react/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/alexbotelhoa/lobbysys-laravel-react">
+  <a href="https://github.com/alexbotelhoa/lobbysys-lareavel/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/alexbotelhoa/lobbysys-lareavel">
   </a>
-
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
-## About Laravel
+<p align="center">
+  <img alt="LobbySys" src="https://user-images.githubusercontent.com/44276302/85882827-5bc83600-b7b6-11ea-92b1-a6f37e3c2e76.jpg" />
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+    <a href="#computer-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#computer_mouse-backend">Plataforma</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#memo-licença">Licença</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/alex-botelho-almeida/">
+      <img src="https://img.icons8.com/color/24/000000/linkedin.png"/>
+    </a>
+    <a href="https://www.youtube.com/channel/UC6N_L0nZWRjcym8bnChKppw/">
+      <img src="https://img.icons8.com/color/24/000000/youtube-play.png"/>
+    </a>
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## :computer: Projeto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+O LobbysSys é um sistema de controle de portaria, feito como desafio para uma empresa Winker de Florianópolis. Utilizei o SQLite para banco de dados, para o backend usei a linguagem PHP utilizando o Framework Laravel e para o frontend fiz em Javascript com Framework React.
 
-## Learning Laravel
+## :rocket: Tecnologias
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+:point_down: Esse projeto foi desenvolvido com as seguintes tecnologias: :point_down:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-  [VS Code](https://code.visualstudio.com/)
+-  [Cors](https://github.com/expressjs/cors)
+-  [SQLite](https://www.sqlite.org/)
+-  [ReactJS](https://reactjs.org/)
+-  [Axios](https://github.com/axios/axios)
+-  [React Icons](https://github.com/react-icons/react-icons)
+-  (Em processo de atualiazação...)
 
-## Laravel Sponsors
+## :information_source: Desenvolvimento
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### :computer_mouse: Plataforma: 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+```bash
+# Clone o Repositório
+$  git clone https://github.com/alexbotelhoa/lobbysys-laravel-react.git
+# Va até o diretório do backend, e instale suas dependências
+$ cd backend
+# Instale as dependências
+$ composer install && npm install && npm run dev
+# Rode o backend 
+$ php artisan serve
+```
+-  (Em processo de atualiazação...)
 
-## Contributing
+## :memo: Licença
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
