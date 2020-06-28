@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img alt="LobbySys" src="https://user-images.githubusercontent.com/44276302/85882827-5bc83600-b7b6-11ea-92b1-a6f37e3c2e76.jpg" />
+  <img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400">
 </p>
 
 <p align="center">
